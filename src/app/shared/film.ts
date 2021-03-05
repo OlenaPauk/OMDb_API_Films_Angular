@@ -1,7 +1,8 @@
 export interface IFilm {
-    poster?:string;
-    title:string;
-    type?: string;
-    year?:number;
+    Poster?:string;
+    Title:string;
+    Type?: string;
+    Year?:number;
     imdbID?:string
 }
+
