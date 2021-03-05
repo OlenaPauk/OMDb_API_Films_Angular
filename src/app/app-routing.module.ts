@@ -1,13 +1,12 @@
 import { FilmsComponent } from './films/films.component';
-import { SearchComponent } from './search/search.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FilmDetailsComponent } from './films/film-details/film-details.component';
 
 const routes: Routes = [
-  { path: '', component: SearchComponent },
-  { path: 'films', component: FilmsComponent },
-  { path: 'films/:id', component: FilmsComponent },
-  { path: '**', component: SearchComponent },
+  { path: '', component: FilmsComponent },
+  { path: 'films/:id', component: FilmDetailsComponent },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({

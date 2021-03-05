@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IFilm } from '../shared/film';
+import { FilmsService } from '../shared/films.service';
 
 @Component({
   selector: 'app-films',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./films.component.css']
 })
 export class FilmsComponent implements OnInit {
-
-  constructor() { }
+  filmName: string = '';
+  page: number = 1;
+  films: IFilm[]= []
+  constructor(public filmsService: FilmsService) { }
 
   ngOnInit(): void {
+
+  }
+  searchFilms() {
+    this.filmsService.getFilms(this.filmName, this.page).subscribe(
+      (data:any)=> this.films.push(data)
+    )
+    console.log(this.films)
+    this.filmName = ''
   }
 
 }

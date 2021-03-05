@@ -1,1 +1,11 @@
-<p>films works!</p>
+<div class="search-input">
+    <input type="text" [(ngModel)]="filmName" (keydown.enter)="searchFilms()">
+    <button (click)="searchFilms()">Search</button>
+</div>
+<div class="films">
+    <div class="film-info" *ngFor="let film of films">
+        <h3>{{film.title}}</h3>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
