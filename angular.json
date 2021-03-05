@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "api-films"
+  "defaultProject": "api-films",
+  "cli": {
+    "analytics": "3ff8d679-3671-411a-9099-49a8f2673551"
+  }
 }
